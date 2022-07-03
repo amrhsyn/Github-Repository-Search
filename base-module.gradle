@@ -1,0 +1,96 @@
+apply plugin: 'com.android.library'
+apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'dagger.hilt.android.plugin'
+
+android {
+    compileSdk ProjectConfig.compileSdk
+
+    defaultConfig {
+        minSdk ProjectConfig.minSdk
+        targetSdk ProjectConfig.targetSdk
+        versionCode ProjectConfig.versionCode
+        versionName ProjectConfig.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [
+                        "room.schemaLocation":"$projectDir/schemas".toString(),
+                        "room.incremental":"true",
+                        "room.expandProjection":"true"]
+            }
+        }
+    }
+    buildTypes {
+        debug {
+            buildConfigField "String", "BASE_URL", '"https://github.com/api/"'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", '"https://github.com/api/"'
+        }
+    }
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    externalNativeBuild {
+        ndkBuild {
+            path = file("src/main/jni/Android.mk")
+        }
+    }
+    ndkVersion = "24.0.8215888"
+}
+
+dependencies {
+
+    coreLibraryDesugaring Core.desugarJdkLibs
+
+    kapt DaggerHilt.hiltCompiler
+    implementation DaggerHilt.hiltAndroid
+
+    implementation AndroidX.annotation
+    implementation AndroidX.annotationExperimental
+    implementation Coroutines.coroutines
+    implementation Coroutines.coroutinesAndroid
+
+    testImplementation Testing.junit4
+    testImplementation Testing.junitAndroidExt
+    testImplementation Testing.truth
+    testImplementation Testing.kotlinxCoroutinesTest
+    testImplementation Testing.turbine
+    testImplementation Testing.composeUiTest
+    testImplementation Testing.mockk
+    testImplementation Testing.mockkAgentJvm
+    testImplementation Testing.androidxTextCore
+    testImplementation Testing.mockWebServer
+    testImplementation project(Modules.testShared)
+
+    androidTestImplementation Testing.junit4
+    androidTestImplementation Testing.junitAndroidExt
+    androidTestImplementation Testing.truth
+    androidTestImplementation Testing.kotlinxCoroutinesTest
+    androidTestImplementation Testing.turbine
+    androidTestImplementation Testing.composeUiTest
+    androidTestImplementation Testing.mockk
+    androidTestImplementation Testing.mockkAndroid
+    androidTestImplementation Testing.mockWebServer
+    androidTestImplementation Testing.hiltTesting
+    androidTestImplementation Testing.composeUiTestManifest
+    androidTestImplementation Testing.testRunner
+    androidTestImplementation project(Modules.testShared)
+
+
+}
