@@ -1,6 +1,6 @@
-package me.ahch.githubsearch.navigation
+package me.ahch.githubSearch.navigation
 
 object Argument {
-    const val HITS_ARGUMENT = "hits_arguments"
+    const val REPOSITORY_ARGUMENT = "repository_arguments"
 
 }

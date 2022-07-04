@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.7">
+    <bytecodeTargetLevel target="1.8">
       <module name="Github_Search.app" target="11" />
       <module name="Github_Search.buildSrc" target="11" />
       <module name="Github_Search.buildSrc.main" target="11" />
       <module name="Github_Search.buildSrc.test" target="11" />
-      <module name="Github_Search.core" target="1.8" />
-      <module name="Github_Search.core.main" target="1.8" />
-      <module name="Github_Search.core.test" target="1.8" />
       <module name="Github_Search.core_ui" target="11" />
       <module name="Github_Search.repository_details.repository_details_data" target="11" />
+      <module name="Github_Search.repository_details.repository_details_domain" target="11" />
+      <module name="Github_Search.repository_details.repository_details_domain.main" target="1.8" />
+      <module name="Github_Search.repository_details.repository_details_domain.test" target="1.8" />
       <module name="Github_Search.repository_details.repository_details_presentation" target="11" />
       <module name="Github_Search.repository_list.repository_list_data" target="11" />
+      <module name="Github_Search.repository_list.repository_list_domain" target="11" />
+      <module name="Github_Search.repository_list.repository_list_domain.main" target="1.8" />
+      <module name="Github_Search.repository_list.repository_list_domain.test" target="1.8" />
       <module name="Github_Search.repository_list.repository_list_presentation" target="11" />
-      <module name="Github_Search.test_shared" target="1.8" />
-      <module name="Github_Search.test_shared.main" target="1.8" />
-      <module name="Github_Search.test_shared.test" target="1.8" />
       <module name="Pixabay_Search.app" target="11" />
       <module name="Pixabay_Search.buildSrc" target="11" />
       <module name="Pixabay_Search.buildSrc.main" target="11" />

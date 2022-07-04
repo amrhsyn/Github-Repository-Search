@@ -1,0 +1,7 @@
+<resources>
+    <string name="search_screen_search_view_label">search here(multi search with space)</string>
+    <string name="search_screen_search_view_search_icon">search icon</string>
+    <string name="search_screen_search_view_close_icon">close icon</string>
+    <string name="search_screen_retry">retry</string>
+    <string name="search_screen_error_something_went_wrong">something went wrong</string>
+</resources>

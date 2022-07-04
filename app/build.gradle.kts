@@ -17,7 +17,7 @@ android {
         versionCode = ProjectConfig.versionCode
         versionName = ProjectConfig.versionName
 
-        testInstrumentationRunner = "me.ahch.githubsearch.HiltTestRunner"
+        testInstrumentationRunner = "me.ahch.githubSearch.HiltTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -79,13 +79,14 @@ dependencies {
     implementation(DaggerHilt.hiltAndroid)
     kapt(DaggerHilt.hiltCompiler)
 
-    implementation(project(Modules.core))
-/*
-    implementation(project(Modules.imageSearchPresentation))
-    implementation(project(Modules.imageSearchDomain))
-    implementation(project(Modules.imageSearchData))
-    implementation(project(Modules.imageDetailPresentation))
-*/
+    implementation(project(Modules.CORE))
+
+    implementation(project(Modules.REPOSITORY_LIST_PRESENTATION))
+    implementation(project(Modules.REPOSITORY_LIST_DOMAIN))
+    implementation(project(Modules.REPOSITORY_LIST_DATA))
+    implementation(project(Modules.REPOSITORY_DETAILS_PRESENTATION))
+    implementation(project(Modules.REPOSITORY_DETAILS_DOMAIN))
+    implementation(project(Modules.REPOSITORY_DETAILS_DATA))
 
     implementation(AndroidX.coreKtx)
     implementation(AndroidX.appCompat)
@@ -101,12 +102,6 @@ dependencies {
     implementation(Retrofit.okHttpLoggingInterceptor)
     implementation(Retrofit.gsonConvertor)
 
-    kapt(Room.roomCompiler)
-    implementation(Room.roomRuntime)
-    implementation(Room.roomKtx)
-    implementation(Room.roomPaging)
-    implementation(Paging.paging)
-
     testImplementation(Testing.junit4)
     testImplementation(Testing.junitAndroidExt)
     testImplementation(Testing.truth)
@@ -117,7 +112,7 @@ dependencies {
     testImplementation(Testing.mockkAgentJvm)
     testImplementation(Testing.androidxTextCore)
     testImplementation(Testing.mockWebServer)
-    testImplementation(project(Modules.testShared))
+    testImplementation(project(Modules.TEST_SHARED))
 
     androidTestImplementation(Testing.junit4)
     androidTestImplementation(Testing.junitAndroidExt)
@@ -131,7 +126,7 @@ dependencies {
     androidTestImplementation(Testing.hiltTesting)
     androidTestImplementation(Testing.testRunner)
     androidTestImplementation(Testing.composeUiTestManifest)
-    androidTestImplementation(project(Modules.testShared))
+    androidTestImplementation(project(Modules.TEST_SHARED))
 
     kaptAndroidTest(DaggerHilt.hiltCompiler)
 

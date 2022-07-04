@@ -1,14 +1,11 @@
-package me.ahch.githubsearch
+package me.ahch.githubSearch
 
 import android.annotation.SuppressLint
 import android.net.Uri
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -18,10 +15,12 @@ import androidx.navigation.navArgument
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.InternalCoroutinesApi
-import me.ahch.core.model.Hit
-import me.ahch.githubsearch.navigation.Argument.HITS_ARGUMENT
-import me.ahch.githubsearch.navigation.Route
-import me.ahch.githubsearch.ui.theme.GithubSearchTheme
+import me.ahch.core.model.Repository
+import me.ahch.githubSearch.navigation.Argument.REPOSITORY_ARGUMENT
+import me.ahch.githubSearch.navigation.Route
+import me.ahch.githubSearch.ui.theme.GithubSearchTheme
+import me.ahch.repository_details_presentation.DetailsScreen
+import me.ahch.repository_list_presentation.SearchScreen
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @InternalCoroutinesApi
@@ -44,35 +43,31 @@ fun GithubSearchApp() {
                 composable(
                     route = Route.SEARCH_SCREEN
                 ) {
-                   /* SearchScreen(
+                    SearchScreen(
                         scaffoldState = scaffoldState,
                         viewModel = hiltViewModel(),
                         navigateToDetailsScreen = {
-                            val jsonHit = Uri.encode(Gson().toJson(it))
-                            navController.navigate(Route.DETAILS_SCREEN + "/${jsonHit}")
+                            val jsonRepository = Uri.encode(Gson().toJson(it))
+                            navController.navigate(Route.DETAILS_SCREEN + "/${jsonRepository}")
                         }
-                    )*/
-
+                    )
                 }
                 composable(
-                    route = Route.DETAILS_SCREEN + "/{$HITS_ARGUMENT}",
+                    route = Route.DETAILS_SCREEN + "/{$REPOSITORY_ARGUMENT}",
                     arguments = listOf(
-                        navArgument(HITS_ARGUMENT) {
+                        navArgument(REPOSITORY_ARGUMENT) {
                             type = NavType.StringType
                         }
                     )
                 ) {
-                    val hitType = object : TypeToken<Hit>() {}.type
-                    val selectedHit = Gson().fromJson<Hit>(
-                        it.arguments?.getString(HITS_ARGUMENT)!!,
-                        hitType
+                    val repositoryType = object : TypeToken<Repository>() {}.type
+                    val selectedRepository = Gson().fromJson<Repository>(
+                        it.arguments?.getString(REPOSITORY_ARGUMENT)!!,
+                        repositoryType
                     )
-                   /* ImageDetailScreen(
-                        scaffoldState,
-                        selectedHit
-                    ) {
-                        navController.navigateUp()
-                    }*/
+                    DetailsScreen(
+                        selectedRepository
+                    )
                 }
             }
         }

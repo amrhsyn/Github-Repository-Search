@@ -9,5 +9,5 @@ java {
 }
 
 dependencies {
-    "implementation"(project(Modules.core))
+    "implementation"(project(Modules.CORE))
 }

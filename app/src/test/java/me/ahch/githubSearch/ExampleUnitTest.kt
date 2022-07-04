@@ -1,4 +1,4 @@
-package me.ahch.githubsearch
+package me.ahch.githubSearch
 
 import org.junit.Test
 

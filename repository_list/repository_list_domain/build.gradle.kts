@@ -1,9 +1,7 @@
-plugins {
-    id("java-library")
-    id("org.jetbrains.kotlin.jvm")
+apply {
+    from("$rootDir/base-module.gradle")
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_7
+dependencies {
+    "implementation"(project(Modules.CORE))
 }

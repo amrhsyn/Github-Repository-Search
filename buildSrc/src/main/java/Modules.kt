@@ -1,15 +1,17 @@
 object Modules {
-    const val app = ":app"
+    const val APP = ":app"
 
-    const val core = ":core"
-    const val coreUi = ":core_ui"
+    const val CORE = ":core"
+    const val CORE_UI = ":core_ui"
 
-    const val testShared = ":test_shared"
+    const val TEST_SHARED = ":test_shared"
 
-    const val imageSearchData = ":image_search:image_search_data"
-    const val imageSearchDomain = ":image_search:image_search_domain"
-    const val imageSearchPresentation = ":image_search:image_search_presentation"
+    const val REPOSITORY_LIST_PRESENTATION = ":repository_list:repository_list_presentation"
+    const val REPOSITORY_LIST_DOMAIN = ":repository_list:repository_list_domain"
+    const val REPOSITORY_LIST_DATA = ":repository_list:repository_list_data"
 
-    const val imageDetailPresentation = ":image_detail:image_detail_presentation"
+    const val REPOSITORY_DETAILS_PRESENTATION = ":repository_details:repository_details_presentation"
+    const val REPOSITORY_DETAILS_DOMAIN = ":repository_details:repository_details_domain"
+    const val REPOSITORY_DETAILS_DATA = ":repository_details:repository_details_data"
 
 }

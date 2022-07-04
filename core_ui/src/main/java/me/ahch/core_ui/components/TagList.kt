@@ -10,10 +10,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import me.ahch.core_ui.util.ChipsElevation
-import me.ahch.core_ui.util.ChipsRoundedCorner
-import me.ahch.core_ui.util.DefaultSmallPadding
-import me.ahch.core_ui.util.DefaultStandardPadding
+import me.ahch.core_ui.utils.ChipsElevation
+import me.ahch.core_ui.utils.ChipsRoundedCorner
+import me.ahch.core_ui.utils.DefaultSmallPadding
+import me.ahch.core_ui.utils.DefaultStandardPadding
 
 
 @Composable

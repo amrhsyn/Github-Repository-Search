@@ -54,7 +54,6 @@ dependencies {
     implementation Compose.navigation
     implementation Compose.viewModelCompose
     implementation Compose.activityCompose
-    implementation Paging.paging
     implementation Coil.COIL
     implementation Coil.SKYDOVES_COIL
     implementation Coroutines.coroutines
@@ -70,7 +69,7 @@ dependencies {
     testImplementation Testing.mockkAgentJvm
     testImplementation Testing.androidxTextCore
     testImplementation Testing.mockWebServer
-    testImplementation project(Modules.testShared)
+    testImplementation project(Modules.TEST_SHARED)
 
     androidTestImplementation Testing.junit4
     androidTestImplementation Testing.junitAndroidExt 
@@ -84,6 +83,6 @@ dependencies {
     androidTestImplementation Testing.hiltTesting
     androidTestImplementation Testing.composeUiTestManifest
     androidTestImplementation Testing.testRunner
-    androidTestImplementation project(Modules.testShared)
+    androidTestImplementation project(Modules.TEST_SHARED)
 
 }

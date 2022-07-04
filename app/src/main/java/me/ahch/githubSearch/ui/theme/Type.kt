@@ -1,4 +1,4 @@
-package me.ahch.githubsearch.ui.theme
+package me.ahch.githubSearch.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

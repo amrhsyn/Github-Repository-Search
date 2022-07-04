@@ -1,4 +1,4 @@
-package me.ahch.githubsearch.navigation
+package me.ahch.githubSearch.navigation
 
 object Route {
     const val SEARCH_SCREEN = "search_screen"
