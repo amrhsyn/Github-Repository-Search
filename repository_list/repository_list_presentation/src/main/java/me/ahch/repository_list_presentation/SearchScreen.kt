@@ -2,7 +2,9 @@ package me.ahch.repository_list_presentation
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.material.*
+import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.Scaffold
+import androidx.compose.material.ScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -11,12 +13,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.unit.dp
 import me.ahch.core.model.Repository
 import me.ahch.core_ui.paging.Paging
 import me.ahch.core_ui.utils.CircularProgressIndicatorSize
 import me.ahch.core_ui.utils.UiEvent
-import me.ahch.repository_list_presentation.components.ErrorAndRetry
+import me.ahch.core_ui.components.ErrorAndRetry
 import me.ahch.repository_list_presentation.components.SearchItem
 import me.ahch.repository_list_presentation.components.SearchView
 
@@ -44,6 +45,22 @@ fun SearchScreen(
             }
         }
     }
+
+    if (state.showLoadingIndicator && state.repositoryList.isEmpty()) {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            CircularProgressIndicator(
+                modifier = Modifier
+                    .width(CircularProgressIndicatorSize)
+                    .height(CircularProgressIndicatorSize)
+            )
+
+        }
+    }
+
 
     Scaffold(
         scaffoldState = scaffoldState,

@@ -1,4 +1,4 @@
-package me.ahch.repository_list_presentation
+package me.ahch.core
 
 import org.junit.Test
 

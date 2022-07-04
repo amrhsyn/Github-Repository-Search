@@ -10,9 +10,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.dp
 import me.ahch.core.model.Repository
-import me.ahch.core_ui.utils.*
+import me.ahch.core_ui.utils.DefaultLargePadding
+import me.ahch.core_ui.utils.DefaultStandardPadding
 
 @Composable
 fun SearchItem(repository: Repository, onItemClick: () -> Unit) {

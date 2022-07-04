@@ -16,7 +16,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import me.ahch.core_ui.utils.DefaultTopBarHeight
-import me.ahch.repository_list_presentation.R.*
+import me.ahch.repository_list_presentation.R.string
 
 @Composable
 fun SearchView(

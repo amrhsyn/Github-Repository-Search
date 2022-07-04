@@ -1,8 +1,8 @@
 package me.ahch.repository_list_data.remote.dto
 
 
-import com.google.gson.annotations.SerializedName
 import androidx.annotation.Keep
+import com.google.gson.annotations.SerializedName
 
 @Keep
 data class RepositoryDto(

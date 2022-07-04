@@ -4,9 +4,9 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import me.ahch.repository_list_data.BuildConfig
 import me.ahch.repository_list_data.remote.SearchApi
 import me.ahch.repository_list_data.repository.SearchRepositoryImpl
-import me.ahch.repository_list_data.BuildConfig
 import me.ahch.repository_list_domain.repository.SearchRepository
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -18,18 +18,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object GithubSearchDataModule {
-
-    @Provides
-    @Singleton
-    fun provideOkHttpClient(): OkHttpClient {
-        return OkHttpClient.Builder()
-            .addInterceptor(
-                HttpLoggingInterceptor().apply {
-                    level = HttpLoggingInterceptor.Level.BODY
-                }
-            )
-            .build()
-    }
 
     @Provides
     @Singleton
@@ -51,7 +39,6 @@ object GithubSearchDataModule {
             api = api,
         )
     }
-
 
 }
 

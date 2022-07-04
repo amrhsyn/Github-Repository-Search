@@ -7,7 +7,6 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
-import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import me.ahch.core.utils.Resource
 import me.ahch.core_ui.paging.PagingStateWrapper
@@ -32,8 +31,8 @@ class SearchViewModel @Inject constructor(private val searchRepositoryUseCase: S
     val uiEvent = _uiEvent.receiveAsFlow()
 
     init {
-        searchRepository("JakeWharton")
-        _state.value = state.value.copy(searchedValue = "JakeWharton")
+        searchRepository("infinum JakeWharton")
+        _state.value = state.value.copy(searchedValue = "infinum JakeWharton")
     }
 
     fun onEvent(event: SearchEvent) {
@@ -43,7 +42,7 @@ class SearchViewModel @Inject constructor(private val searchRepositoryUseCase: S
                 // searchRepository()
             }
             is SearchEvent.OnSearchClick -> {
-                _state.value = state.value.copy(searchedValue = event.text)
+                _state.value = state.value.copy(searchedValue = event.text, repositoryList = listOf())
                 searchRepository()
             }
             is SearchEvent.OnCloseClick -> {

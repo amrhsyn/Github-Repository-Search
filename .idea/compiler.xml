@@ -6,6 +6,7 @@
       <module name="Github_Search.buildSrc" target="11" />
       <module name="Github_Search.buildSrc.main" target="11" />
       <module name="Github_Search.buildSrc.test" target="11" />
+      <module name="Github_Search.core" target="11" />
       <module name="Github_Search.core_ui" target="11" />
       <module name="Github_Search.repository_details.repository_details_data" target="11" />
       <module name="Github_Search.repository_details.repository_details_domain" target="11" />

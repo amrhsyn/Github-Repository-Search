@@ -28,7 +28,7 @@ android {
 
 
     buildTypes {
-      /*  getByName("release") {
+        /*getByName("release") {
             isDebuggable = false
             isMinifyEnabled = false
             isShrinkResources = true

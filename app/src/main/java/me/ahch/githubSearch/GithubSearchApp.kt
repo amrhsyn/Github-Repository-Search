@@ -3,8 +3,9 @@ package me.ahch.githubSearch
 import android.annotation.SuppressLint
 import android.net.Uri
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.*
-import androidx.compose.runtime.*
+import androidx.compose.material.Scaffold
+import androidx.compose.material.rememberScaffoldState
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavType
@@ -66,7 +67,12 @@ fun GithubSearchApp() {
                         repositoryType
                     )
                     DetailsScreen(
-                        selectedRepository
+                        scaffoldState = scaffoldState,
+                        viewModel = hiltViewModel(),
+                        selectedRepository,
+                        onBackPress = {
+                            navController.navigateUp()
+                        }
                     )
                 }
             }
