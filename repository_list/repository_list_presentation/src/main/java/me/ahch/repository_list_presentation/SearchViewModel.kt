@@ -5,8 +5,7 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.receiveAsFlow
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import me.ahch.core.utils.Resource
 import me.ahch.core_ui.paging.PagingStateWrapper
@@ -60,12 +59,11 @@ class SearchViewModel @Inject constructor(private val searchRepositoryUseCase: S
                 showLoadingIndicator = page == 1
             )
             job = viewModelScope.launch {
-                searchRepositoryUseCase.invoke(
+               searchRepositoryUseCase.invoke(
                     userNames = userNames.separateBySpace(),
                     page,
                     perPage
-                )
-                    .collect { result ->
+                ).collect{ result ->
                         when (result) {
                             is Resource.Success -> {
                                 _state.value =
