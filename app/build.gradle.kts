@@ -126,7 +126,7 @@ dependencies {
     androidTestImplementation(Testing.hiltTesting)
     androidTestImplementation(Testing.testRunner)
     androidTestImplementation(Testing.composeUiTestManifest)
-    androidTestImplementation(project(Modules.TEST_SHARED))
+   androidTestImplementation(project(Modules.TEST_SHARED))
 
     kaptAndroidTest(DaggerHilt.hiltCompiler)
 
