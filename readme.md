@@ -1,7 +1,9 @@
 
 #  Description
 
-An application for searching Github repositories and show details.
+An application for searching Github repositories and showing details. you can search multi-users in GitHub(with putting a space in search) and get the repositories together
+<br />
+when you open the application, the application gets "infinum" and "JakeWharton" repositories by default
 <br />
 you can download a debug version here : [debug version ](https://github.com/amrhsyn/Github-Repository-Search/blob/develop/app-debug.apk)
 
@@ -62,7 +64,7 @@ details screen:
 -
 
 #  And
-- because of time limitation, i couldn't write tests for this project but you can see:
+- because of time limitations, I couldn't write tests for this project but you can see:
   a sample view model test [here](https://github.com/amrhsyn/Pixabay-Image-Search/blob/develop/image_search/image_search_presentation/src/test/java/me/ahch/image_search_presentation/SearchViewModelTest.kt)
   repository testing [here](https://github.com/amrhsyn/fna/tree/master/fleetlist/fleetlist_data/src/test/java/me/ahch/fleetlist_data)
   and compose E2E testing [here](https://github.com/amrhsyn/Pixabay-Image-Search/tree/develop/app/src/androidTest/java/me/ahch/pixabaysearch)
@@ -70,4 +72,4 @@ details screen:
 - I used Coroutines and Flows for app threading and observing because it's lighter than Rx, it's native and integrated with other google libraries and it's easier to test because google has some libraries for testing them.
 - For UI/UX, I tried to keep it simple, I used material design and free assets
 - I used git-flow as my git strategy, I created a master, develop, feature/repository_search, and feature/details branches
-- generaly speaking, because of time limitation i couldn't develop perfect and many things can be improved
+- generaly speaking, because of time limitations i couldn't develop perfect and many things can be improved
