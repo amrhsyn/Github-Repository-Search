@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="details_screen_error_something_went_wrong">something went wrong</string>
+    <string name="details_screen_no_events">no events</string>
 </resources>

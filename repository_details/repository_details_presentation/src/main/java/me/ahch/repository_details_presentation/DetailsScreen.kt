@@ -53,18 +53,18 @@ fun DetailsScreen(
     Scaffold(
         scaffoldState = scaffoldState,
         bottomBar = {
-        FloatingActionButton(
-            modifier = Modifier.padding(
-                DefaultLargePadding
-            ),
-            onClick = { onBackPress() }, backgroundColor = MaterialTheme.colors.primary
-        ) {
-            Icon(
-                imageVector = Icons.Filled.ArrowBack,
-                contentDescription = ""
-            )
-        }
-    }) {
+            FloatingActionButton(
+                modifier = Modifier.padding(
+                    DefaultLargePadding
+                ),
+                onClick = { onBackPress() }, backgroundColor = MaterialTheme.colors.primary
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.ArrowBack,
+                    contentDescription = ""
+                )
+            }
+        }) {
         Column(modifier = Modifier.background(Color(0xFFDFDFDF))) {
             Card(
                 modifier = Modifier

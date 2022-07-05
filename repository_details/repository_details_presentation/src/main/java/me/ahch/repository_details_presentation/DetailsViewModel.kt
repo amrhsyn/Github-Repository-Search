@@ -29,10 +29,18 @@ constructor(private val getEventsUseCase: GetEventsUseCase) : ViewModel() {
 
 
     fun getEvents(ownerName: String, repositoryName: String) {
-        viewModelScope.launch {
+        job?.cancel()
+        job=  viewModelScope.launch {
             when (val result = getEventsUseCase.invoke(ownerName, repositoryName)) {
                 is Resource.Success -> {
                     _state.value = state.value.copy(eventsList = result.data)
+                    if (result.data.isEmpty()){
+                        _uiEvent.send(
+                            UiEvent.ShowSnackbar(
+                                UiText.StringResource(R.string.details_screen_no_events)
+                            )
+                        )
+                    }
                 }
                 is Resource.Error -> {
                     _uiEvent.send(
@@ -44,9 +52,6 @@ constructor(private val getEventsUseCase: GetEventsUseCase) : ViewModel() {
                             }
                         )
                     )
-                }
-                is Resource.Loading -> {
-
                 }
             }
         }
