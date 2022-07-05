@@ -44,11 +44,11 @@ details screen:
 
 | [core_ui](/core_ui/)  | core ui utils classes. |
 
-| [repositorySearch presentation](/repository_search/repository_search_presentation/)  | repository search ui contains compose files, viewmodels and etc ... |
+| [repositoryList presentation](/repository_list/repository_list_presentation/)  | repository search ui contains compose files, viewmodels and etc ... |
 
-| [repositorySearch domain](/repository_search/repository_search_domain) | repository search domain layer contains repository interfaces and usecases calasses |
+| [repositoryList domain](/repository_list/repository_list_domain) | repository search domain layer contains repository interfaces and usecases calasses |
 
-| [repositorySearch data ](/repository_search/repository_search_data/) | repository search data layer contains repositories implementation, retrofit, dto files, mappers |
+| [repositoryList data ](/repository_list/repository_list_data/) | repository search data layer contains repositories implementation, retrofit, dto files, mappers |
 
 | [repositoryDetails presentation ](/repository_details/repository_details_presentation/)  | repository details ui contains compose files, viewmodels and etc .... |
 
