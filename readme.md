@@ -61,7 +61,6 @@ details screen:
 
 #  Architecture
 - I used MVVM + Clean Architecture, I have three separated modules named presentation, domain, data for each feature module, with this I have strict separation in my layers and they don't access each other I implemented all clean architecture concepts because the project was an assignment and I think it's over-engineering for this project.
--
 
 #  And
 - because of time limitations, I couldn't write tests for this project but you can see:
